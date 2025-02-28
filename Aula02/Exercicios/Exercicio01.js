@@ -10,4 +10,4 @@ let classificaTriangulo = (lado1, lado2, lado3) =>{
 
 console.log(classificaTriangulo(4, 4, 4));
 console.log(classificaTriangulo(3, 5, 6));
-console.log(classificaTriangulo(3, 4, 3))
+console.log(classificaTriangulo(3, 4, 3));
