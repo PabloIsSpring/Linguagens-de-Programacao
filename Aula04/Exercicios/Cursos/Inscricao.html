@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscricao</title>
+</head>
+<body>
+    <form action="https://67cb71e53395520e6af5562c.mockapi.io/registros" method="post">
+        <fieldset>
+            <legend>Cadastro do Aluno</legend>
+            <p>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+            </p>
+            <p>
+                <label for="rua">Rua: </label>
+                <input type="text" name="rua" id="rua">
+            </p>
+            <p>
+                <label for="bairro">Bairro: </label>
+                <input type="text" name="bairro" id="bairro">
+            </p>
+            <p>
+                <label for="cidade">Cidade: </label>
+                <input type="text" name="cidade" id="cidade">
+            </p>
+            <p>
+                <label for="numeroCasa">Numero da casa</label>
+                <input type="number" name="numeroCasa" id="numeroCasa">
+            </p>
+            <p>
+                <label for="cep">CEP: </label>
+                <input type="text" name="cep" id="cep">
+            </p>
+            <p>
+                <label for="complemento">Complemento: </label>
+                <input type="text" name="complemento" id="complemento">
+            </p>
+            <p>
+                <label for="estado">Estado: </label>
+                <select name="estado" id="estado">
+                    <option value="SP">São Paulo</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                </select>
+            </p>
+            <p>
+                <label for="telefone">Telefone: </label>
+                <input type="text" name="telefone" id="telefone">
+            </p>
+            <p>
+                <label for="celular">Celular: </label>
+                <input type="text" name="celular" id="celular" required>
+            </p>
+            <p>
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email" required>
+            </p>
+            <p>
+                <label for="cor">Cor: </label>
+                <input type="radio" name="cor" value="branco"> <label for="cor">Branco</label>
+                <input type="radio" name="cor" value="preto"> <label for="cor">Preto</label>
+                <input type="radio" name="cor" value="pardo"> <label for="cor">Pardo</label>
+                <input type="radio" name="cor" value="indigena"> <label for="cor">Indigena</label>
+                <input type="radio" name="cor" value="amarelo"> <label for="cor">Amarelo</label>
+            </p>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+            <legend>Cadastro Pai</legend>
+            <p>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+            </p>
+            <p>
+                <label for="dataNascimento">Data de Nascimento: </label>
+                <input type="date" name="dataNascimento" id="dataNascimento">
+            </p>
+            <p>
+                <label for="naturalidade">Naturalidade: </label>
+                <select name="naturalidade" id="naturalidade">
+                    <option value="brasileiro">Brasileiro-nato</option>
+                    <option value="estrangeiro">Estrangeiro</option>
+                    <option value="naturalizado">Cidadao Naturalizado</option>
+                </select>
+            </p>
+            <p>
+                <label for="intrucaoProfissional">Profissão: </label>
+                <input type="text" name="intrucaoProfissional" id="intrucaoProfissional">
+            </p>
+            <p>
+                <label for="celular">Celular: </label>
+                <input type="text" name="celular" id="celular" required>
+            </p>
+            <p>
+                <label for="email">E-mail: </label>
+                <input type="text" name="email" id="email">
+            </p>
+            <p>
+                <label for="cpf">CPF: </label>
+                <input type="text" name="cpf" id="cpf">
+            </p>
+            <p>
+                <label for="responsavelFinanceiro">Responsavel Financeiro</label>
+                <input type="radio" name="responsavelFinanceiro" value="sim"> <label for="responsavelFinanceiro">Sim</label>
+                <input type="radio" name="responsavelFinanceiro" value="nao"> <label for="responsavelFinanceiro">Não</label>
+            </p>
+
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+            <legend>Cadastro Mãe</legend>
+            <p>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+            </p>
+            <p>
+                <label for="dataNascimento">Data de Nascimento: </label>
+                <input type="date" name="dataNascimento" id="dataNascimento">
+            </p>
+            <p>
+                <label for="naturalidade">Naturalidade: </label>
+                <select name="naturalidade" id="naturalidade">
+                    <option value="brasileiro">Brasileiro-nato</option>
+                    <option value="estrangeiro">Estrangeiro</option>
+                    <option value="naturalizado">Cidadao Naturalizado</option>
+                </select>
+            </p>
+            <p>
+                <label for="intrucaoProfissional">Profissão: </label>
+                <input type="text" name="intrucaoProfissional" id="intrucaoProfissional">
+            </p>
+            <p>
+                <label for="celular">Celular: </label>
+                <input type="text" name="celular" id="celular" required>
+            </p>
+            <p>
+                <label for="email">E-mail: </label>
+                <input type="text" name="email" id="email">
+            </p>
+            <p>
+                <label for="cpf">CPF: </label>
+                <input type="text" name="cpf" id="cpf">
+            </p>
+            <p>
+                <label for="responsavelFinanceiro">Responsavel Financeiro: </label>
+                <input type="radio" name="responsavelFinanceiro" value="sim"> <label for="responsavelFinanceiro">Sim</label>
+                <input type="radio" name="responsavelFinanceiro" value="nao"> <label for="responsavelFinanceiro">Não</label>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Cadastro Curso</legend>
+            <p>
+                <label for="curso">Curso:</label>
+                <select name="curso" id="curso" required>
+                    <option value="DESENHO">Desenho</option>
+                    <option value="INFORMATICA">Informatica</option>
+                </select>
+            </p>
+            <p>
+                <label for="dataIngresso">Deseja iniciar quando</label>
+                <input type="date" name="dataIngresso" id="dataIngresso" required>
+            </p>
+            <p>
+                <label for="valorCurso">Valor: </label>
+                <select name="valorCurso" id="valorCurso" required>
+                    <option value="R$240,00">Informatica - R$240,00</option>
+                    <option value="R$300,00">Desenho - R$300,00</option>
+                </select>
+            </p>
+            <p>
+                <label for="formaDePagamento">Forma de Pagamento: </label>
+                <select name="formaDePagamento" id="formaDePagamento" required>
+                    <option value="debito">Debito</option>
+                    <option value="credito">Credito</option>
+                    <option value="pix">Pix</option>
+                </select>
+            </p>
+            <p>
+                <label for="qtdParcelas">Quantas Vezes: </label>
+                <select name="qtdParcelas" id="qtdParcelas">
+                    <option value="1x">A vista</option>
+                    <option value="5">4 Vezes</option>
+                    <option value="10">10 Vezes</option>
+                </select>
+            </p>
+        </fieldset>
+        <p>
+            <button type="submit">Inscrever-se</button>
+        </p>
+    </form>
+</body>
+</html>
