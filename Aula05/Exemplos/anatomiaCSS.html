@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomia de CSS</title>
+</head>
+<style>
+    .selector {
+        color: orange;
+        font-size: 80px;
+        background-color: aqua;
+        width: calc(50% - 76px);
+        border: #08d14f 5px solid;
+    }
+
+    .selector:hover {
+        color: rgb(116, 222, 246);
+        background-color: black;
+    }
+
+    .selector::first-letter {
+        font-size: 200px;
+        color: #1f08d1;
+    }
+
+    #exemplo.selector {
+        color: #08d14f;
+    }
+</style>
+<body>
+
+    <div class="selector">
+        <span id="exemplo">C</span>SS - Folha de Estilo em cascata
+    </div>
+    
+</body>
+</html>

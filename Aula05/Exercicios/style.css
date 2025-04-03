@@ -1,0 +1,36 @@
+body {
+    background-color: beige;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-indent: 20px;
+}
+
+#cabecalho {
+    background-color:rgb(182, 185, 87);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+#cabecalho:hover {
+    background-color: black;
+}
+
+#lista {
+    h2{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+    p{
+        text-indent: 0px;
+        text-align: justify;
+        padding: 0px;
+    }
+}
