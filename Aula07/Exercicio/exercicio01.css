@@ -1,0 +1,34 @@
+body {
+    background-color: antiquewhite;
+    display: flex;
+
+    height: 560px;
+
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.blocoLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(208, 183, 244);
+    border-radius: 20px;
+
+
+    width: 340px;
+    height: 439px;
+}
+
+input {
+    width: 320px;
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+
+}
