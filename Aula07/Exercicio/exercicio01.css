@@ -1,8 +1,9 @@
 body {
     background-color: antiquewhite;
     display: flex;
+    font-family: Arial, Helvetica, sans-serif;
 
-    height: 560px;
+    height: 98.5vh;
 
     justify-content: center;
     flex-direction: row;
@@ -22,13 +23,27 @@ body {
     height: 439px;
 }
 
+.foto {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin-top: 10%;
+}
+
 input {
     width: 320px;
+    margin-top: 0px;
+    margin-bottom: 4px;
 }
 
-button {
+h2 {
+    margin: 0px;
+}
+
+p {
     display: flex;
-    flex-direction: column;
-    align-self: flex-end;
 
+    flex-direction: row-reverse;
 }
+
+
