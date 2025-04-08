@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<style>
+
+</style>
+<body>
+    
+    <p>Contador de Cliques: 0</p>
+    <button onclick="contador(event)">Clique aqui</button>
+
+
+</body>
+<script>
+
+    var cont = 0;
+
+    function contador(event){
+        event.preventDefault()
+
+        let texto = document.querySelector('p')
+        cont++
+        texto.textContent = `Contador de Cliques: ${cont}`
+    }
+
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+<body>
+
+    <h1>Lista de tarefas: </h1>
+    <label for="valor">Adicionar nova tarefa:</label>
+    <input type="text" name="valor" id="valor">
+    <button onclick="addTask(event)">Adicionar</button>
+    
+    <ul>
+        
+    </ul>
+</body>
+<script>
+    function addTask(event) {
+        event.preventDefault()
+
+        let tarefa = document.querySelector('#valor').value
+        let list = document.querySelector('ul')
+        let item = document.createElement('li')
+
+        if(tarefa != '') {
+            item.textContent = tarefa
+            list.appendChild(item)
+        } else {
+            window.alert('Campo de texto vazio')
+        }
+
+        document.querySelector('#valor').value = '';
+    }
+
+
+</script>
+</html>
