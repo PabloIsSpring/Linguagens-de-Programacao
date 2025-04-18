@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    margin: 0px;
+    height: 98.5vh;
+}
+
+.MenuLateral {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 0px;
+    background-color: cadetblue;
+    width: 18%;
+    height: 99.9vh;
+}
+
+.conteudo {
+    width: 82%;
+    height: 99.9vh;
+    background-color: rgb(123, 0, 255);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula DOM - Manipulação  de propriedades</title>
+</head>
+<style>
+    .paragrafo {
+        font-size: 30px;
+        background-color: darkcyan;
+    }
+</style>
+<body>
+    <h1>Dom manipular propriedades</h1>
+    <p>
+        <a href="https://github.com/PabloIsSpring/Linguagens-de-Programacao">Git Hub</a>
+    </p>
+    <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Icon">
+    </p>
+</body>
+<script>
+    let link = document.querySelector('a')
+    link.textContent = "Facens"
+    link.href = 'www.google.com'
+    link.setAttribute("href", "https://facens.br/")
+
+    let imagen = document.querySelector('img')
+    imagen.src = 'https://facens.br/wp-content/uploads/2021/03/logo-f.png'
+    imagen.setAttribute('width', '90px')
+
+    let titulo = document.querySelector('h1')
+    titulo.style.color = 'red'
+    titulo.style.backgroundColor = 'black'
+    titulo.style.border = '2px blue solid'
+    titulo.style.borderRadius = '30px'
+
+    let mudancaCSS = document.querySelector('p')
+    mudancaCSS.setAttribute('class', 'paragrafo')
+    mudancaCSS.removeAttribute('class')
+    mudancaCSS.classList.add('paragrafo')
+    mudancaCSS.classList.remove('paragrafo')
+</script>
+</html>
