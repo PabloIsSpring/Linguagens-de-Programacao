@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Simples</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Cadastro de Cliente</legend>
+            <p>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="digite o nome completo" required>
+            </p>
+            <p>
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email" placeholder="digite seu e-mail" required>
+            </p>
+            <p>
+                <label for="tel">Telefone: </label>
+                <input type="tel" name="tel" id="tel" placeholder="digite seu telefone" required>
+            </p>
+            <p>
+                <button onclick = "gravar(event)">Gravar</button>
+            </p>
+        </fieldset>
+    </form>
+</body>
+<script>
+    function gravar(event){
+        event.preventDefault()
+
+        let nome = document.getElementById('nome').value
+        let email = document.getElementById('email').value
+        let telefone = document.getElementById('tel').value
+
+        let cliente = {
+            nome: nome,
+            email: email,
+            telefone: telefone,
+        }
+        fetch('https://67cb71e53395520e6af5562c.mockapi.io/cliente', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cliente)
+            
+        })
+        .then(resposta => resposta.json())
+        .then(dados => {
+            console.log(dados)
+            document.getElementById('nome').value = ''
+            document.getElementById('email').value = ''
+            document.getElementById('tel').value = ''
+            window.alert('Cliente cadastrado')
+            document.querySelector('#nome').focus()
+        })
+    }
+</script>
+</html>
