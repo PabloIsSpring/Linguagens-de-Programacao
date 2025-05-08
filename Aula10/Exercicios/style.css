@@ -20,7 +20,7 @@ body h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 310px;
+    width: 340px;
     height: 200px;
     background: linear-gradient(to right, #beb6a6, #f8ead8 );
     border: white 2px solid;
