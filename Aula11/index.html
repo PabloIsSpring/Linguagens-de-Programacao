@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 - Prova</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        height: 100vh;
+        background: linear-gradient(to right, #00bfff, #0d1f2d ); 
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .boxCadastro {
+        display: flex;
+        color: white;
+        background-color: rgb(6, 6, 18);
+        border-radius: 9px;
+        border: white solid 2px;
+        width: 140vh;
+        height: 70vh;
+        justify-content: space-around;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    button {
+        color: white;
+        background-color: rgb(6, 6, 18);
+        width: 120px;
+        height: 40px;
+        border-radius: 7px;
+        border: white solid 1px;
+    }
+
+    input {
+        color: white;
+        background-color: #0d1f2d;
+        border-radius: 4px;
+        border: white solid 0.6px;
+    }
+
+    select{
+        color: white;
+        background-color: #0d1f2d;
+        border-radius: 4px;
+        border: white solid 0.6px;
+    }
+
+    h1 {
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    
+</style>
+
+<body>
+
+    <h1>Cadastro de Novos Funcionários</h1>
+    <div class="boxCadastro">
+        <div class="box">
+        <h2>Dados Pessoais</h2>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+
+        <label for="tel">Telefone</label>
+        <input type="text" name="tel" id="tel">
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf">
+
+        <label for="rg">Registro Geral</label>
+        <input type="text" name="rg" id="rg">
+        </div>   
+        <div class="box">
+        <h2>Cadastro de Cargo</h2>
+        <label for="cargo">Cargos</label>
+        <select name="cargo" id="cargo" onchange="setarCargo(event)">
+            <option value="0">Selecione . . .</option>
+            <option value="Analista de Sistemas">Analista de Sistemas</option>
+            <option value="Assistente Administrativo">Assistente Administrativo</option>
+            <option value="Secretário">Secretário</option>
+            <option value="Gerente de Vendas">Gerente de Vendas</option>
+            <option value="Analista de Marketing">Analista de Marketing</option>
+        </select>
+
+        <label for="sal">Salario</label>
+        <input type="text" name="sal" id="sal" readonly>
+
+        <label for="sigla">Setor</label>
+        <input type="text" name="sigla" id="sigla" readonly>
+
+        <label for="nomeSetor">Nome do Setor</label>
+        <input type="text" name="nomeSetor" id="nomeSetor" readonly>
+        </div>
+        <div class="box">
+        <h2>Escolha de Convenio</h2>
+        <label for="convenioNome">Convenios </label>
+        <select name="convenioNome" id="convenioNome" onchange="setarConvenio(event)">
+            <option value="0">Selecione . . .</option>
+            <option value="UNIMED">Unimed</option>
+            <option value="Intermedica">Intermédica</option>
+        </select>
+
+        <label for="convenioValorTitular">Valor do Titular</label>
+        <input type="text" name="convenioValorTitular" id="convenioValorTitular" readonly>
+
+        <label for="convenioValorDependente">Valor de Dependente</label>
+        <input type="text" name="convenioValorDependente" id="convenioValorDependente" readonly>
+        </div>
+    </div>
+    <button onclick="salvar(event)"><b>Registrar</b></button>
+    
+</body>
+<script>
+    function salvar(event){
+        event.preventDefault();
+
+        let nome = document.getElementById('nome').value
+        let tel = document.getElementById('tel').value
+        let email = document.getElementById('email').value
+        let cpf = document.getElementById('cpf').value
+        let rg = document.getElementById('rg').value
+        let cargo = document.getElementById('cargo').value
+        let sal = document.getElementById('sal').value
+        let sigla = document.getElementById('sigla').value
+        let nomeSetor = document.getElementById('nomeSetor').value
+        let convenioNome = document.getElementById('convenioNome').value
+        let convenioValorTitular = document.getElementById('convenioValorTitular').value
+        let convenioValorDependente = document.getElementById('convenioValorDependente').value
+
+        if(nome == '' || email == '' || cpf == ''){
+            window.alert("Prencha os Campos obrigatórios, Nome, CPF e E-mail")
+            return;
+        }
+
+        let funcionario = {
+            nome: nome,
+            tel: tel,
+            email: email,
+            cpf: cpf,
+            rg: rg,
+            cargo: cargo,
+            salario: sal,
+            nomeSetor: nomeSetor,
+            sigla: sigla,
+            convenioNome: convenioNome,
+            convenioValorTitular: convenioValorTitular,
+            convenioValorDependente: convenioValorDependente
+        } 
+        console.log(funcionario)
+        fetch('https://67cb71e53395520e6af5562c.mockapi.io/Funcionario', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(funcionario)
+        })
+        .then(resposta => resposta.json())
+        .then(dados => {
+            console.log(dados)
+            document.getElementById('nome').value = ''
+            document.getElementById('tel').value = ''
+            document.getElementById('email').value = ''
+            document.getElementById('cpf').value = ''
+            document.getElementById('rg').value = ''
+            document.getElementById('cargo').value = ''
+            document.getElementById('sal').value = ''
+            document.getElementById('sigla').value = ''
+            document.getElementById('nomeSetor').value = ''
+            document.getElementById('convenioNome').value = ''
+            document.getElementById('convenioValorTitular').value = ''
+            document.getElementById('convenioValorDependente').value = ''
+            window.alert('Funcionario cadastrado')
+            document.querySelector('#nome'.focus())
+        })
+    }
+
+    function setarCargo(event){
+        event.preventDefault();
+
+        let cargoOBJ = retornaCargoOBJ(document.getElementById('cargo').value);
+        let setor = retornaSetorOBJ(cargoOBJ.idSetor)
+
+        document.getElementById('sal').value = cargoOBJ.salario
+        document.getElementById('nomeSetor').value =  setor.nome
+        document.getElementById('sigla').value = setor.sigla
+    }
+
+    function retornaCargoOBJ(cargo){
+        for(let i = 0; i < cargos.length; i++){
+            if(cargo === cargos[i].nome){
+                return cargos[i]
+            }
+        }
+    }
+
+    function retornaSetorOBJ(idSetor){
+        for(let i = 0; i < setores.length; i++){
+            if(idSetor == setores[i].id){
+                return setores[i];
+            }
+        }
+    }
+
+    function setarConvenio(event){
+        event.preventDefault();
+        let convenioOBJ = retornaConvenioOBJ(document.getElementById('convenioNome').value)
+
+        document.getElementById('convenioValorTitular').value = convenioOBJ.valor.titular
+        document.getElementById('convenioValorDependente').value = convenioOBJ.valor.dependente 
+
+    }
+
+    function retornaConvenioOBJ(convenioNome){
+        for(let i = 0; i < convenios.length; i++){
+            if(convenioNome === convenios[i].nome){
+                return convenios[i];
+            }
+        }
+    }
+    let setores = [
+        { id: 1, nome: "Tecnologia da Informação", sigla: "TI" },
+        { id: 2, nome: "Recursos Humanos", sigla: "RH" },
+        { id: 3, nome: "Financeiro", sigla: "FI" },
+        { id: 4, nome: "Marketing e Vendas", sigla: "MK" },
+        { id: 5, nome: "Produção e Operações", sigla: "PO" },
+    ];
+    let cargos = [
+        { id: 1, nome: "Analista de Sistemas", salario: "8500", idSetor: "1"},
+        { id: 2, nome: "Assistente Administrativo", salario: "2500", idSetor: "2" },
+        { id: 3, nome: "Secretário", salario: "4300", idSetor: "3" },
+        { id: 4, nome: "Gerente de Vendas", salario: "6500", idSetor: "4" },
+        { id: 5, nome: "Analista de Marketing", salario: "4500", idSetor: "4" },
+    ];
+    let convenios = [
+        { id: 1, nome: "UNIMED", valor: { titular: 1500, dependente: 750 },},
+        { id: 2, nome: "Intermedica", valor: { titular: 1400, dependente: 850 },},
+    ];
+</script>
+</html>
